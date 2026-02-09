@@ -39,6 +39,7 @@ A production-ready FastAPI application that analyses CVs using **LangChain**, **
 ┌──────────────────────────────────────────────────────────────────┐
 │                        FastAPI Application                       │
 │                         (app/main.py)                            │
+<<<<<<< Updated upstream
 │  ┌──────────┐  ┌──────────────┐  ┌──────────────────────────┐    │
 │  │  /upload │  │ /analyze/{id}│  │ /agent/query             │    │
 │  └─────┬────┘  └──────┬───────┘  └────────────┬─────────────┘    │
@@ -54,6 +55,23 @@ A production-ready FastAPI application that analyses CVs using **LangChain**, **
 │  │     (LangChain Splitter)    │  │  - search_cv_section     │   │
 │  │  3. CVExtractorService      │  │  - analyze_cv_formatting │   │
 │  │     (Structured Output)     │  │                          │   │
+=======
+│  ┌──────────┐  ┌──────────────┐  ┌──────────────────────────┐   │
+│  │  /upload  │  │ /analyze/{id}│  │ /agent/query             │   │
+│  └─────┬────┘  └──────┬───────┘  └────────────┬─────────────┘   │
+│        │               │                       │                 │
+│        ▼               ▼                       ▼                 │
+│  ┌─────────────────────────────┐  ┌──────────────────────────┐   │
+│  │      CVAnalyzer             │  │    CVAgentService         │   │
+│  │    (Orchestrator)           │  │   (LangGraph ReAct Agent) │   │
+│  │                             │  │                           │   │
+│  │  1. DocumentLoaderFactory   │  │  Tools:                   │   │
+│  │     (Factory Pattern)       │  │  - get_cv_full_text       │   │
+│  │  2. TextChunker             │  │  - get_cv_chunks          │   │
+│  │     (LangChain Splitter)    │  │  - search_cv_section      │   │
+│  │  3. CVExtractorService      │  │  - analyze_cv_formatting  │   │
+│  │     (Structured Output)     │  │                           │   │
+>>>>>>> Stashed changes
 │  │  4. JobMatcherService       │  └──────────────────────────┘   │
 │  │     (FAISS Vector Store)    │                                 │
 │  │  5. RecommenderService      │                                 │
