@@ -1,0 +1,45 @@
+# ─────────────────────────────────────────────────────────────
+# .gitignore — AI-Powered CV Analysis
+# ─────────────────────────────────────────────────────────────
+
+# Environment & secrets (NEVER commit these)
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads & temp files
+/tmp/
+cv_uploads/
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# FAISS index files (generated at runtime)
+*.faiss
+*.pkl

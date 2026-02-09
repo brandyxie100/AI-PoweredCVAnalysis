@@ -1,0 +1,41 @@
+# ─────────────────────────────────────────────────────────────
+# docker-compose.yml — CV Analysis API
+# ─────────────────────────────────────────────────────────────
+# Usage:
+#   docker compose up --build        # Build and start
+#   docker compose up -d             # Start in background
+#   docker compose down              # Stop and remove containers
+#   docker compose logs -f api       # Follow logs
+#
+# Before running:
+#   1. Copy .env.example to .env
+#   2. Fill in your ANTHROPIC_API_KEY and OPENAI_API_KEY
+# ─────────────────────────────────────────────────────────────
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cv-analysis-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - UPLOAD_DIR=/tmp/cv_uploads
+      - LOG_LEVEL=INFO
+    volumes:
+      # Mount a volume for uploaded CVs (persists across restarts)
+      - cv_uploads:/tmp/cv_uploads
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  cv_uploads:
+    driver: local
