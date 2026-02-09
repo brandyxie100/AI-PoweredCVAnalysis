@@ -40,6 +40,7 @@ A production-ready FastAPI application that analyses CVs using **LangChain**, **
 │                        FastAPI Application                       │
 │                         (app/main.py)                            │
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 │  ┌──────────┐  ┌──────────────┐  ┌──────────────────────────┐    │
 │  │  /upload │  │ /analyze/{id}│  │ /agent/query             │    │
 │  └─────┬────┘  └──────┬───────┘  └────────────┬─────────────┘    │
@@ -56,6 +57,8 @@ A production-ready FastAPI application that analyses CVs using **LangChain**, **
 │  │  3. CVExtractorService      │  │  - analyze_cv_formatting │   │
 │  │     (Structured Output)     │  │                          │   │
 =======
+=======
+>>>>>>> Stashed changes
 │  ┌──────────┐  ┌──────────────┐  ┌──────────────────────────┐   │
 │  │  /upload  │  │ /analyze/{id}│  │ /agent/query             │   │
 │  └─────┬────┘  └──────┬───────┘  └────────────┬─────────────┘   │
@@ -71,6 +74,9 @@ A production-ready FastAPI application that analyses CVs using **LangChain**, **
 │  │     (LangChain Splitter)    │  │  - search_cv_section      │   │
 │  │  3. CVExtractorService      │  │  - analyze_cv_formatting  │   │
 │  │     (Structured Output)     │  │                           │   │
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 │  │  4. JobMatcherService       │  └──────────────────────────┘   │
 │  │     (FAISS Vector Store)    │                                 │
